@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 
 from dotenv import find_dotenv
 from pydantic import computed_field
@@ -23,6 +23,7 @@ class Settings(BaseSettings):
 
     # LLM
     GOOGLE_API_KEY: Optional[str] = ""
+    GOOGLE_API_KEYS: Optional[List[str]] = []
 
     # General models
     TORCH_DEVICE: Optional[str] = None  # Note: MPS device does not work for text detection, and will default to CPU
